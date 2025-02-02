@@ -203,3 +203,25 @@ git reset --hard HEAD~1
 ```bash
 git reset --mixed HEAD~1
 ```
+
+## Git Pull, Fetch
+
+Git pull and fetch are related concept but not same. When we pull then the code are fetch at first and then merge the code with current branch. And fetch to bring the code only. Don't merge with the existing branch.
+
+We can execute the command below for pull
+
+```bash
+git pull origin main
+```
+
+We can execute the command below for fetch
+
+```bash
+git fetch origin
+```
+
+Then if we want to merge the code then we have to execute the command below:
+
+```bash
+git merge origin/main
+```
