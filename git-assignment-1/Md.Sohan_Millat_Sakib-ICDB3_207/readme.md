@@ -225,3 +225,97 @@ Then if we want to merge the code then we have to execute the command below:
 ```bash
 git merge origin/main
 ```
+
+## Git Rebasing:
+
+There are two type of rebasing. They are:
+
+- Standard Rebasing.
+- Interactive Rebasing.
+
+**Standard Rebasing:** Using Standard Rebasing we can merge two branch. We can also rebase with remote origin.
+
+Now why we will use Standard Rebasing?
+
+For three reason:
+
+- Clean History: Rebasing creates a linear commit history, making it easier to understand the project’s evolution.
+
+- Avoid Merge Commits: Rebasing avoids unnecessary merge commits, which can clutter the history.
+
+- Syncing Branches: It’s useful for keeping a feature branch up to date with the latest changes from the main branch.
+
+#### Standard Rebasing Process:
+
+If we want to rebasing with another branch then follow the steps:
+
+At first checkout to your new branch:
+
+```bash
+git checkout feature-branch
+```
+
+Then rebase with main:
+
+```bash
+git rebase main
+```
+
+If any conflict occurs then at first resolve all conflicts and then execute the command below:
+
+```bash
+git add -A
+git rebase --continue
+```
+
+If we want to rebase with remote origin the follow the steps below:
+At first fetch the remote origin.
+
+```bash
+git fetch origin
+```
+
+Then checkout your new branch:
+
+```bash
+git checkout feature-branch
+```
+
+Then rebase with the remote origin:
+
+```bash
+git rebase origin/main
+```
+
+**Interactive Rebasing Process:**
+Interactive rebase allows to modify commits as we want to rebase them. You can do using interactive Rebasing:
+
+- Reorder commits.
+
+- Squash multiple commits into one.
+
+- Edit commit messages.
+
+- Split commits.
+
+- Drop commits.
+
+For this you have to write the command below at first.
+
+```bash
+git rebase -i HEAD~3
+```
+
+After enter this command then open a vim terminal where they ask on which commit which action we want to perform. Then we have to edit this file as per our requirement. For that we have to press `Esc` key at first. Then we have to write `:wq`. Then It is ready to rebasing. Now we can add file and perform the command below:
+
+```bash
+git add -A
+git commit --amend
+git rebase --continue
+```
+
+If we decide that we don't rebase then we can execute the command below:
+
+```bash
+git rebase --abort
+```
