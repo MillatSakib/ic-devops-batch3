@@ -177,3 +177,29 @@ or if we want to cancel the cherry-pick then we can use the command below:
 ```bash
 git cherry-pick --abort
 ```
+
+### Git Reset:
+
+We can delete the commit using the git reset feature. There have three types of git resetting. They are
+
+- Soft Reset.
+- Hard Reset.
+- Mixed Reset.
+
+**Soft Reset:** On soft reset the filse are on staged but the commit are deleted. The command are below:
+
+```bash
+git reset --soft HEAD~1
+```
+
+**Hard Reset:** On hard reset the file and commit are deleted.
+
+```bash
+git reset --hard HEAD~1
+```
+
+**Mixed Reset:** On Mixed reset the file goes to on unstaged and the commits are removed.
+
+```bash
+git reset --mixed HEAD~1
+```
