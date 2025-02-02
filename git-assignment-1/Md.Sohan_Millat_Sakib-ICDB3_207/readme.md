@@ -71,3 +71,43 @@ If we wat a simplified log history then we have to use `--oneline` flag Like bel
 ```bash
 git log --oneline
 ```
+
+## Git Remote
+
+Git remote is a way to connect our local repository to a remote repository. It allows you to collaborate with others, share code and synchronize changes between your local and remote repositories. Actually a remote is a pointer to a remote repository. It is essentially a shortcut or alias for the URL of the remote repository. We can check the remote URL using the command below:
+
+```bash
+git remote -v
+```
+
+We can add the Remote origin using the command below:
+
+```bash
+git remote add origin https://gitmillat.com/username/repo.git
+```
+
+We have to add multiple remote origin for an project. For that we can add multiple remote origin using different name. Like:
+
+```bash
+git remote add millat https://gitmillat.com/username/repo.git
+```
+
+We can rename our Origin name. Like below:
+
+```bash
+git remote rename <old-name> <new-name>
+```
+
+We can update the remote origin using the command below:
+
+```bash
+git remote set-url <origin-name> <new-url>
+```
+
+### Upstream:
+
+In git upstream refers to original repository or the main source repository from which your local repository or fork was created. We can add the upstream using the command below:
+
+```bash
+git remote add upstream https://gitmillat.com/username/repo.git
+```
