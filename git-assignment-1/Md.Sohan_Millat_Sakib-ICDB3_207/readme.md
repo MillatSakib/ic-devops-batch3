@@ -319,3 +319,29 @@ If we decide that we don't rebase then we can execute the command below:
 ```bash
 git rebase --abort
 ```
+
+## Reset VS Revert
+
+Actually reset and revert are looks like same. But there have a slite difference between that. Like, reset remove the git history. But revert add a new commit. So, reset can be harmful but Revert are harmless.We are disscuss about reset before. Now we see how we can revert.
+
+For revert we have to execute the command below:
+
+```bash
+git revert <commit-hash>
+```
+
+## Git Reflog
+
+Git Reflog are a power full tool. We can undo our execution using the command. If we make hard reset unconsouiusly then we can use the git Reflog.
+
+For this we can see the reference log using the command below
+
+```bash
+git reflog
+```
+
+Then we can checkout our specific reflog like below:
+
+```bash
+git checkout HEAD@{3}
+```
