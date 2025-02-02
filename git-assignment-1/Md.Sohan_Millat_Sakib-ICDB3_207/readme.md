@@ -111,3 +111,69 @@ In git upstream refers to original repository or the main source repository from
 ```bash
 git remote add upstream https://gitmillat.com/username/repo.git
 ```
+
+## Git Branch
+
+If we want to add new feature in our project then we can make a new branch and write the code on that branch. We can make a new branch using the command below:
+
+```bash
+git branch feature-branch
+```
+
+We can checkout to a specific branch using the command below:
+
+```bash
+git checkout feature-branch
+```
+
+If we want that if the branch are not available the branch are created at first then the checkout will perform otherwise checkout will be directly then we can use the command below:
+
+```bash
+git checkout -b feature-branch
+```
+
+#### Cherry-Pick command
+
+Suppose you make a commit on another branch then what you will do? Will you totally merge the whole branch? No need it. You can use cherry-pick command for solve this problem. Acually cherry-pick are use to add one or more commit on current branch from another branch. The command procedure of cherry-pick are given below:
+
+At first know about the commit history. For see commit history we can use the command below:
+
+```bash
+git log --oneling
+```
+
+After copy the the targeted commit hash checkout to the branch in which branch you want to add the commit.
+
+```bash
+git checkout main
+```
+
+Then execute the command below:
+
+```bash
+git cherry-pick <paste-previous-coppied-commit-hash>
+```
+
+That is the process. But we can also add multiple commit by adding the commit hashes on the command:
+
+```bash
+git cherry-pick abc123 xyz456
+```
+
+We can also use the range of commit like below:
+
+```bash
+git cherry-pick abc123..xyz456
+```
+
+When we perform Cherry-pick then any kind of conflict can perform. So after solve the conflicting issue we have to use the command below:
+
+```bash
+git cherry-pick --continue
+```
+
+or if we want to cancel the cherry-pick then we can use the command below:
+
+```bash
+git cherry-pick --abort
+```
